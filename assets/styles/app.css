@@ -1,0 +1,138 @@
+body {
+    overflow-y: auto;    
+    /* min-height: 100vh;
+    display: flex;
+    flex-direction: column; */
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    border-radius: 8%;
+}
+
+.user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.slide img {
+    top: 0;
+    left: 0px;
+    min-width: 110%!important;
+    height: 550px;
+    max-height: 550px;
+    width: auto;
+}
+
+.ximg {
+    border-radius: 10%!important;
+}
+
+.footer {
+    max-width: 100%!important;
+    width: 100%!important;
+    padding: 10px!important;
+    font-size: 11px;
+}
+
+.notfound {
+    margin-top: 30%!important;
+    margin-bottom:30%;
+}
+
+.v-center {
+    margin-top: 30%!important;
+    margin-bottom:30%;
+}
+
+#staticBackdrop {
+    width: 80%;
+}
+
+#line {
+    color:red!important;
+    border-color: red!important;
+}
+.v-menu {
+    text-align: left;
+}
+
+.card-img {
+    width: 300px;
+    height: 180px;
+}
+.card-txt {
+    font-size: 12px;
+    text-align: justify;
+}
+.card-height {
+    max-height: 120%!important;
+    height: 120%!important;
+}
+
+.layout-height {
+    background-color: black;
+    margin-bottom: 40px;
+}
+
+.bar { visibility: hidden; }
+.burger { 
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+ }
+  
+ .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 10px; 
+    height: 30px!important;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+    border-radius: 100%; 
+}
+
+.msg {
+    color: red;
+    font-size: 12px;
+}
+
+ /* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .slide img {
+        top: 0;
+        left: 0px;
+        min-width: 110%!important;
+        height: 350px;
+        max-height: 350px;
+        width: auto;
+    }
+    .bar { 
+        visibility: visible; 
+        color: white;
+    }
+
+}
+
+ /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+ }
+
+ /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
+
+
+

@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\User;
+// use App\Security\JwtAuthenticator;
+// use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+// use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+
+class xRegisterController extends AbstractController
+{
+    /**
+     * @Route("/createuser", name="createuser", methods={"POST"})
+     */
+    public function register(
+        // JwtAuthenticator $authenticator, 
+        // UserPasswordEncoderInterface $passwordEncoder, 
+        // GuardAuthenticatorHandler $guardHandler, 
+        Request $request): Response
+    {
+        $data = json_decode($request->getContent());
+
+        $repoPost = $this->getDoctrine()->getRepository(User::class);
+
+        $userEmail = $repoPost->findOneBy(['email' => $data->email]);
+        if ($userEmail != null) {
+            return $this->json([
+                'message' => 'Email Address is already taken.'
+            ]);
+        } else {
+            return $this->json($data->lastname);
+        }
+
+        // $user = new User();
+        // $user->setEmail($data->email);
+        // $user->setPassword($passwordEncoder->encodePassword($user, $data->password));
+        // $user->setRoles(["ROLE_USER"]);
+
+        // $em = $this->getDoctrine()->getManager();
+        // $em->persist($user);
+        // $em->flush();
+
+        // return $guardHandler->authenticateUserAndHandleSuccess(
+        //     $user,          // the User object you just created
+        //     $request,
+        //     $authenticator,'main' // authenticator whose onAuthenticationSuccess you want to use
+        //     //'main'          // the name of your firewall in security.yaml
+        // );
+        return $this->json($data->lastname);
+
+        // return $this->json([
+        //     'message' => 'New User ID No. ' . $user->getId() . ' has been created.',
+        // ]);
+    }
+}
