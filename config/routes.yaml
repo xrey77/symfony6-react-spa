@@ -7,9 +7,39 @@ api_login_check:
 login:
    methods: POST
    path: /user/login
-   controller: App\Controller\LoginController::login
+   controller: App\Controller\LoginController::index
 
 register:
    path: /user/register
    controller: App\Controller\RegisterController::register
+
+getallusers:
+   path: /api/getallusers
+   methods: GET
+   controller: App\Controller\UserController::index
+
+getuserbyid:
+   path: /api/getuserbyid
+   methods: GET
+   controller: App\Controller\UserController::getuserbyid
+
+blockuser:
+   path: /api/blockuser
+   methods: PUT
+   controller: App\Controller\UserController::blockuser
+
+deleteuser:
+   path: /api/deleteuser
+   methods: DELETE
+   controller: App\Controller\UserController::deleteuser
+
+acitvateuser:
+   path: /api/acitvateuser
+   methods: PUT
+   controller: App\Controller\UserController::acitvateuser
+
+forgotpassword:
+   path: /api/forgotpassword
+   methods: GET
+   controller: App\Controller\UserController::forgotpassword
 

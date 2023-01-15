@@ -27,7 +27,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $username = null;
 
     #[ORM\Column(length: 180, unique: true)]
-    private ?string $email = null;
+    private ?string $email;
 
     /**
      * @ORM\Column(type="json_array")
@@ -60,10 +60,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?int $mailtoken;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $qrcodeurl;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $userpic;
 
     // #[Column(type='datetime')]
